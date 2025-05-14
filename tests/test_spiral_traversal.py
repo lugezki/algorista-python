@@ -8,7 +8,9 @@ def test_spiral_traverse_3x3():
         [7, 8, 9]
     ]
     expected_output = [1, 2, 3, 6, 9, 8, 7, 4, 5]
-    assert spiral_traverse(matrix) == expected_output
+    result = spiral_traverse(matrix)
+    print(result)
+    assert result == expected_output
 
 def test_spiral_traverse_empty():
     matrix = []
