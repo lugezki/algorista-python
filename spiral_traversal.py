@@ -2,16 +2,16 @@ def spiral_traverse(matrix):
     """
     Takes a matrix and returns an array after performing a spiral traversal.
     """
-    if len(matrix) <= 0:
+    if len(matrix) == 0:
         return []
 
-    result = []
     rows = len(matrix)
     cols = len(matrix[0])
+    result = []
 
+    top = 0
     left = 0
     right = cols - 1
-    top = 0
     bottom = rows - 1
 
     while left <= right and top <= bottom:
@@ -24,14 +24,14 @@ def spiral_traverse(matrix):
         right -= 1
 
         if top <= bottom:
-            for col in range(right, left -1, -1):
+            for col in range(right, left - 1, -1):
                 result.append(matrix[bottom][col])
             bottom -= 1
 
+        #print(f"top: {top}, left: {left}, right: {right}, bottom: {bottom}")
         if left <= right:
             for row in range(bottom, top - 1, -1):
                 result.append(matrix[row][left])
             left += 1
-
+    
     return result
-
